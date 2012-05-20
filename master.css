@@ -1,0 +1,154 @@
+@font-face{
+   font-family: Romul;
+   src: url('romul.ttf')
+       ,url('romul.eot'); /* IE9 */
+}
+
+body{
+   padding: 0px;
+   margin: 0px;
+   font-family: Minion Pro;
+   font-family: Romul;
+   font-family: Trajan Pro;
+}
+body>.header{
+   display: block;
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   z-index: 1;
+   width: 100%;
+}
+body{
+   padding-top: 60px;
+}
+body>.header{
+   background-color: #294f73;
+   padding: 0px 50px;
+   box-shadow: 0px 0px 20px black;
+   overflow: hidden;
+   text-align: left;
+}
+body>.header .title{
+   display: inline-block;
+   font-size: xx-large;
+   font-weight: bold;
+   line-height: 60px;
+   letter-spacing: 3px;
+   color: #e3e3e3;
+}
+body>.header .title{
+   background: -moz-radial-gradient(center top, ellipse cover,  rgba(75, 137, 196, 1) 0%, rgba(41, 79, 115, 0) 100%); /* FF3.6+ */
+   background: -webkit-gradient(radial, center top, 0px, center top, 100%, color-stop(0%,rgba(75, 137, 196, 1)), color-stop(100%,rgba(41, 79, 115, 0))); /* Chrome,Safari4+ */
+   background: -webkit-radial-gradient(center top, ellipse cover,  rgba(75, 137, 196, 1) 0%,rgba(41, 79, 115, 0) 100%); /* Chrome10+,Safari5.1+ */
+   background: -o-radial-gradient(center top, ellipse cover,  rgba(75, 137, 196, 1) 0%,rgba(41, 79, 115, 0) 100%); /* Opera 12+ */
+   background: -ms-radial-gradient(center top, ellipse cover,  rgba(75, 137, 196, 1) 0%,rgba(41, 79, 115, 0) 100%); /* IE10+ */
+   background: radial-gradient(center top, ellipse cover,  rgba(75, 137, 196, 1) 0%,rgba(41, 79, 115, 0) 100%); /* W3C */
+}
+
+.nav{
+   display: inline-block;
+   padding: 0px;
+}
+body>.header .nav{
+   float: right;
+   margin-right: 10em;
+   width: 31em;
+}
+.nav>li{
+   display: inline-block;
+   color: #e3e3e3;
+   font-size: larger;
+   margin: 0px 10px;
+}
+.nav>li:not(:last-of-type):after{
+   content: ' ';
+   display: inline-block;
+   width: 2px;
+   height: 17px;
+   background-image: url('img/rule.png');
+   background-repeat: repeat-x;
+   background-position: center center;
+   position: relative;
+   top: 4px;
+   left: 10px;
+}
+
+body>.header .nav:before,body>.header .nav:after{
+   content: url('img/nav_light.png');
+   display: block;
+   width: 0px;
+   height: 0px;
+   overflow: visible;
+   margin-top: -105px;
+}
+body>.header .nav:before{
+   float: left;
+   margin-left: -100px;
+}
+body>.header .nav:after{
+   float: right;
+   margin-left: -200px;
+}
+
+a{
+   color: inherit;
+   text-decoration: none;
+}
+a:hover{
+   text-decoration: underline;
+}
+.back.link{
+   position: fixed;
+   top: 130px;
+   left: 5px;
+}
+
+body{
+   background-color: #3f75a6;
+}
+
+.contents{
+   margin-top: 30px;
+}
+
+.header{
+   color: white;
+   font-weight: bold;
+}
+.contents>.header{
+   font-size: 22px;
+}
+.moto{
+   color: white;
+   font-weight: bold;
+   font-family: Minion Pro;
+   font-family: Trajan Pro;
+   text-align: center;
+}
+
+
+body>.footer{
+   margin-top: -2px;
+   min-height: 150px;
+   padding-bottom: 5px;
+   text-align: center;
+   background-color: #294F73;
+   background-size: 60% 100%;
+   background-image: url('img/footer_background.png');
+   background-repeat: no-repeat;
+   background-position: center top;
+}
+body>.footer.anchored{
+   /*//// Using JS, should increase content's size to fill all of the space it is intended to*/
+   display: block;
+   position: fixed;
+   bottom: 0px;
+   width: 100%;
+}
+body>.footer .nav{
+   margin-top: 60px;
+}
+body>.footer hr{
+   width: 40%;
+}

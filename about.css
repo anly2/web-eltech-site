@@ -1,0 +1,188 @@
+﻿.contents{
+   width: 100%;
+   overflow: auto;
+}
+body{
+   /*#94c9ff  148, 201, 255*/
+   /*#3d72a2  61, 114, 162*/
+   background: -moz-radial-gradient(center center, ellipse cover,  rgba(148, 201, 255, 1) 0px, rgba(61, 114, 162, 0) 80%); /* FF3.6+ */
+   background: -webkit-gradient(radial, center center, 0px, center top, 100%, color-stop(0px,rgba(148, 201, 255, 1)), color-stop(80%,rgba(61, 114, 162, 0))); /* Chrome,Safari4+ */
+   background: -webkit-radial-gradient(center center, ellipse cover,  rgba(148, 201, 255, 1) 0px,rgba(61, 114, 162, 0) 80%); /* Chrome10+,Safari5.1+ */
+   background: -o-radial-gradient(center center, ellipse cover,  rgba(148, 201, 255, 1) 0px,rgba(61, 114, 162, 0) 80%); /* Opera 12+ */
+   background: -ms-radial-gradient(center center, ellipse cover,  rgba(148, 201, 255, 1) 0px,rgba(61, 114, 162, 0) 80%); /* IE10+ */
+   background: radial-gradient(center center, ellipse cover,  rgba(148, 201, 255, 1) 0px,rgba(61, 114, 162, 0) 80%); /* W3C */
+   background-attachment: fixed;
+   background-color: #3f75a6;
+}
+
+.column.left{
+   width: 49%;
+   overflow: auto;
+   margin: 0;
+   margin-bottom: 50px;
+   text-align: left;
+   float: left;
+}
+.column.right{
+   width: 49%;
+   overflow: auto;
+   margin: 0;
+   margin-bottom: 50px;
+   text-align: right;
+   float: right;
+}
+
+.contents .header{
+   margin-bottom: 30px;
+}
+
+button{
+   padding: 5px 10px;
+   border: 0px solid #3F74A6;
+   background-color: #3D72A2;
+   box-shadow: 0px 4px 2px #2C3F51;
+
+   color: white;
+   font-family: Trajan Pro;
+   font-size: 20px;
+   font-weight: bold;
+   box-shadow: 0px 4px 2px #2C3F51;
+}
+button.left{
+   /*float: left;*/
+   padding-left: 100px;
+   box-shadow: 3px 4px 2px #2C3F51;
+}
+button.center{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 5px 100px;
+   box-shadow: 0px 4px 2px #2C3F51;
+}
+button.right{
+   /*float: right;*/
+   padding-right: 100px;
+   box-shadow: -3px 4px 2px #2C3F51;
+}
+button.left{
+   background: -moz-radial-gradient(75px bottom, circle,  rgba(91, 211, 253, 1) -50px, rgba(63, 117, 166, 0) 80px); /* FF3.6+ */
+   background: -webkit-gradient(radial, 75px bottom, 0px, 75px bottom, -50px, color-stop(0px,rgba(91, 211, 253, 1)), color-stop(80px,rgba(63, 117, 166, 0))); /* Chrome,Safari4+ */
+   background: -webkit-radial-gradient(75px bottom, circle,  rgba(91, 211, 253, 1) -50px,rgba(63, 117, 166, 0) 80px); /* Chrome10+,Safari5.1+ */
+   background: -o-radial-gradient(75px bottom, circle,  rgba(91, 211, 253, 1) -50px,rgba(63, 117, 166, 0) 80px); /* Opera 12+ */
+   background: -ms-radial-gradient(75px bottom, circle,  rgba(91, 211, 253, 1) -50px,rgba(63, 117, 166, 0) 80px); /* IE10+ */
+   background: radial-gradient(75px bottom, circle,  rgba(91, 211, 253, 1) -50px,rgba(63, 117, 166, 0) 80px); /* W3C */
+}
+button.center{
+   background: -moz-radial-gradient(center bottom, circle,  rgba(91, 211, 253, 1) -50px, rgba(63, 117, 166, 0) 80%); /* FF3.6+ */
+   background: -webkit-gradient(radial, center bottom, 0px, 75px bottom, -50px, color-stop(0px,rgba(91, 211, 253, 1)), color-stop(80%,rgba(63, 117, 166, 0))); /* Chrome,Safari4+ */
+   background: -webkit-radial-gradient(center bottom, circle,  rgba(91, 211, 253, 1) -50px,rgba(63, 117, 166, 0) 80%); /* Chrome10+,Safari5.1+ */
+   background: -o-radial-gradient(center bottom, circle,  rgba(91, 211, 253, 1) -50px,rgba(63, 117, 166, 0) 80%); /* Opera 12+ */
+   background: -ms-radial-gradient(center bottom, circle,  rgba(91, 211, 253, 1) -50px,rgba(63, 117, 166, 0) 80%); /* IE10+ */
+   background: radial-gradient(center bottom, circle,  rgba(91, 211, 253, 1) -50px,rgba(63, 117, 166, 0) 80%); /* W3C */
+}
+button.right{
+   background: -moz-radial-gradient(175px bottom, circle,  rgba(91, 211, 253, 1) -50px, rgba(63, 117, 166, 0) 80px); /* FF3.6+ */
+   background: -webkit-gradient(radial, 175px bottom, 0px, 75px bottom, -50px, color-stop(0px,rgba(91, 211, 253, 1)), color-stop(80px,rgba(63, 117, 166, 0))); /* Chrome,Safari4+ */
+   background: -webkit-radial-gradient(175px bottom, circle,  rgba(91, 211, 253, 1) -50px,rgba(63, 117, 166, 0) 80px); /* Chrome10+,Safari5.1+ */
+   background: -o-radial-gradient(175px bottom, circle,  rgba(91, 211, 253, 1) -50px,rgba(63, 117, 166, 0) 80px); /* Opera 12+ */
+   background: -ms-radial-gradient(175px bottom, circle,  rgba(91, 211, 253, 1) -50px,rgba(63, 117, 166, 0) 80px); /* IE10+ */
+   background: radial-gradient(175px bottom, circle,  rgba(91, 211, 253, 1) -50px,rgba(63, 117, 166, 0) 80px); /* W3C */
+}
+
+ul.contacts{
+   list-style: none;
+   padding-left: 100px;
+}
+
+.contact{
+   margin-bottom: 50px;
+
+   color: white;
+   font-family: Minion Pro;
+   font-size: 120%;
+}
+
+.contact .mail,
+.contact .email,
+.contact .e-mail{
+   color: #B10505;
+   font-weight: bold;
+}
+.contact .mail:before,
+.contact .email:before,
+.contact .e-mail:before{
+   content: 'e-mail: ';
+}
+
+.header{
+   color: white;
+   font-weight: bold;
+   font-family: Minion Pro;
+   font-family: Trajan Pro;
+   text-align: center;
+}
+
+#the-project{
+   text-align: left;
+   padding-left: 100px;
+   color: white;
+   /*font-family: Verdana;*/
+}
+#the-project .header{
+   font-size: 20px;
+   letter-spacing: 2px;
+   text-align: left;
+   margin-bottom: 10px;
+}
+#the-project .header small{
+   display: block;
+   font-size: 16px;
+   letter-spacing: 0px;
+   color: #294F73;
+   margin-left: 20px;
+}
+#the-project .moto{
+   text-align: left;
+   margin-bottom: 30px;
+}
+#the-project .moto big{
+   font-style: italic;
+   font-size: 20px;
+   letter-spacing: 1px;
+}
+#the-project .image-container{
+   float: left;
+   margin-right: 15px;
+}
+#the-project img{
+   display: block;
+   margin: 10px auto;
+}
+#the-project img:first-of-type{
+   margin-top: 0px;
+}
+#the-project p.hanging:first-letter{
+   margin-left: 30px;
+}
+
+
+ul.members{
+   list-style: none;
+   padding-right: 100px;
+}
+.member{
+   display: block;
+   float: right;
+   min-width: 230px;
+
+   margin: 0px 30px 20px 0px;
+
+   color: white;
+   font-family: Minion Pro;
+   font-size: 120%;
+}
+
+.member .class:after{
+   content: ' клас';
+}
