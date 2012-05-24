@@ -10,6 +10,10 @@ body{
    background-attachment: fixed;
    background-color: #3f75a6;
 }
+.header{
+   font-family: Romul;
+   font-size: 1em;
+}
 
 .menus{
    float: right;
@@ -75,7 +79,6 @@ body{
 }
 
 .article .header{
-   font-size: larger;
    font-weight: bold;
    color: #58A8F3;
 }
@@ -93,8 +96,7 @@ body{
 }
 .article .content{
    margin-bottom: 10px;
-   line-height: 1.5em;
-   font-family: Verdana;
+   line-height: 1.4em;
 }
 .article .continue{
    color: #5099DE;
@@ -126,3 +128,12 @@ body{
    display: inline-block;
    margin: 0px 10px;
 }
+
+/* For the lack of content, menus are disabled */
+.menus{
+   display: none;
+}
+.article{
+   margin-left: 25%;
+}
+/* End of menus' disabling */

@@ -34,13 +34,14 @@
    overflow: hidden;
 }
 .gallery.section .window .image.container{
-   width: 100000px;
+   white-space: nowrap;
+   overflow: visible;
 }
 .gallery.section .image.container img{
    width: 400px;
    height: 200px;
    display: inline-block;
-   margin-right: -5px;
+   margin-right: -4px;
 }
 
 .gallery.section .arrow{
@@ -106,6 +107,8 @@
    color: black;
 }
 .posts.section .header{
+   font-family: Romul;
+   font-size: 1em;
    color: white;
 }
 .posts.section:nth-of-type(odd){
@@ -143,12 +146,13 @@
    content: '';
    display: inline-block;
    float: left;
-   margin: 17px 0px -32px 50%;
-   width: 0px;
-   height: 0px;
-   border-left: 15px solid transparent;
-   border-right: 15px solid transparent;
-   border-bottom: 15px solid #3f75a6;
+   margin: 17px -30px -35px 50%;
+   width: 30px;
+   height: 15px;
+   background-image: url('img/downward_carve.png');
+   background-repeat: no-repeat;
+   background-position: center bottom;
+   background-size: 30px 15px;
 }
 
 .posts.section .left{

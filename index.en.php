@@ -1,6 +1,6 @@
 ﻿<?php
-include_once 'wrapper.frame.php';
-$page = 'Начало';
+include_once 'wrapper.frame.en.php';
+$page = 'home';
 ?>
 <html>
 <head>
@@ -43,7 +43,7 @@ $page = 'Начало';
 <?php
 $imgs = glob('Gallery/thumbnail*');
 foreach($imgs as $pth)
-   echo '            <a href="gallery.php"><img src="'.$pth.'" /></a>'."\n";
+   echo '            <a href="gallery.en.php"><img src="'.$pth.'" /></a>'."\n";
 unset($pth);
 unset($imgs);
 ?>
@@ -75,7 +75,7 @@ unset($imgs);
 
    <div class="posts section">
       <div class="left">
-         <div class="header">Новини от Блога</div>
+         <div class="header">Blog Posts</div>
          <div class="content">
             <a href="?">Честит Великден!</a>
             <a href="?">Материалите са поръчани</a>
@@ -84,7 +84,7 @@ unset($imgs);
          </div>
       </div>
       <div class="right">
-         <div class="header">Интересно от Форума</div>
+         <div class="header">Forum Posts</div>
          <div class="content">
             <a href="?">От къде да започна?</a>
             <a href="?">Къде се бърка най-често?</a>
@@ -96,7 +96,7 @@ unset($imgs);
 
    <div class="posts section">
       <div class="center">
-         <div class="header">Полезни Линкове</div>
+         <div class="header">Related Links</div>
          <div class="content">
             <a class="link" href="http://www.tu-varna.bg">TU-Varna</a>
             <a class="link" href="http://www.napravisam.bg/forum/viewforum.php?f=11">НаправиСам</a>

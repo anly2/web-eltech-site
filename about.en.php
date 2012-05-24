@@ -1,5 +1,5 @@
 ﻿<?php
-include_once 'wrapper.frame.php';
+include_once 'wrapper.frame.en.php';
 $page = 'about us'
 ?>
 <html>
@@ -20,7 +20,7 @@ $page = 'about us'
 
    <div class="left column">
       <a name="contacts"></a>
-      <button class="left">За Контакти</button>
+      <button class="left">Contacts</button>
 
       <br /><br /><br />
 
@@ -67,7 +67,7 @@ $page = 'about us'
 
       <div>
          <a name="the-project"></a>
-         <button class="left">За Проекта</button>
+         <button class="left">The Project</button>
 
          <br /><br /><br />
 
@@ -103,7 +103,7 @@ $page = 'about us'
 
    <div class="right column">
       <a name="the-group"></a>
-      <button class="right">За Групата</button>
+      <button class="right">The Group</button>
       <a name="members"></a>
 
       <br /><br /><br />

@@ -44,7 +44,8 @@ button{
 
    color: white;
    font-family: Trajan Pro;
-   font-size: 20px;
+   font-family: Romul;
+   font-size: 1em;
    font-weight: bold;
    box-shadow: 0px 4px 2px #2C3F51;
 }
@@ -100,7 +101,7 @@ ul.contacts{
 
    color: white;
    font-family: Minion Pro;
-   font-size: 120%;
+   font-size: 1em;
 }
 
 .contact .mail,
@@ -127,28 +128,29 @@ ul.contacts{
    text-align: left;
    padding-left: 100px;
    color: white;
-   /*font-family: Verdana;*/
+   font-size: 1em;
 }
 #the-project .header{
-   font-size: 20px;
+   font-size: 1.3em;
    letter-spacing: 2px;
    text-align: left;
    margin-bottom: 10px;
 }
 #the-project .header small{
    display: block;
-   font-size: 16px;
+   font-size: 0.8em;
    letter-spacing: 0px;
    color: #294F73;
    margin-left: 20px;
 }
 #the-project .moto{
    text-align: left;
+   font-size: 0.90em;
    margin-bottom: 30px;
 }
 #the-project .moto big{
    font-style: italic;
-   font-size: 20px;
+   font-size: 1.25em;
    letter-spacing: 1px;
 }
 #the-project .image-container{
@@ -174,13 +176,13 @@ ul.members{
 .member{
    display: block;
    float: right;
-   min-width: 230px;
+   min-width: 200px;
 
    margin: 0px 30px 20px 0px;
 
    color: white;
    font-family: Minion Pro;
-   font-size: 120%;
+   font-size: 1em;
 }
 
 .member .class:after{

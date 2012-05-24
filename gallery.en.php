@@ -1,4 +1,4 @@
-﻿<?php include_once 'wrapper.frame.php'; ?>
+﻿<?php include_once 'wrapper.frame.en.php'; ?>
 <html>
 <head>
 <?php wrapper_frame_head('   '); ?>
@@ -104,7 +104,7 @@ if(isset($_REQUEST['album'])){
    $pictures = join("\n", $content['pictures']);
 
    if(!isset($pictures) && !isset($videos)){
-      echo '<div style="margin: 35px 0px 0px 175px;">Няма достъпни материали</div>'."\n";
+      echo '<div style="margin: 35px 0px 0px 175px;">No available materials</div>'."\n";
    }else if(!isset($pictures) || !isset($videos)){
       if(isset($pictures))
          echo $pictures;
@@ -114,7 +114,7 @@ if(isset($_REQUEST['album'])){
    }else{
       echo '<div class="videos">'."\n";
       echo '   <div class="section">'."\n";
-      echo '      <div class="header">Видео</div>'."\n";
+      echo '      <div class="header">Video</div>'."\n";
       echo '      <hr />'."\n";
       echo '   </div>'."\n\n";
       echo $videos."\n";
@@ -122,7 +122,7 @@ if(isset($_REQUEST['album'])){
 
       echo '<div class="pictures">'."\n";
       echo '   <div class="section">'."\n";
-      echo '      <div class="header">Снимки</div>'."\n";
+      echo '      <div class="header">Photos</div>'."\n";
       echo '      <hr />'."\n";
       echo '   </div>'."\n\n";
       echo $pictures."\n";
@@ -130,7 +130,7 @@ if(isset($_REQUEST['album'])){
    }
 
 
-   echo '<a class="back link" href="?" style="width: 100px;">Назад към Албумите</a>'."\n";
+   echo '<a class="back link" href="?">Back to Albums</a>'."\n";
 }
 else{
    $albums = glob('Gallery/*', GLOB_ONLYDIR);
@@ -202,8 +202,8 @@ else{
       echo '   <div class="title">'.$title.'</div>'."\n";
       if(isset($description))
          echo '   <div class="description">'.$description.'</div>'."\n";
-      echo '   <div class="count">'.count($imgs).' '.(count($imgs)==1? 'снимка' : 'снимки').'</div>'."\n";
-      echo '   <div class="count">'.count($vids).' '.(count($vids)==1? 'клип' : 'клипа').'</div>'."\n";
+      echo '   <div class="count">'.count($imgs).' '.(count($imgs)==1? 'photo' : 'photos').'</div>'."\n";
+      echo '   <div class="count">'.count($vids).' '.(count($vids)==1? 'video' : 'videos').'</div>'."\n";
       echo '</div>'."\n";
 
       unset($path, $album, $imgs);

@@ -56,8 +56,27 @@ body{
 .album .count{
    font-style: italic;
 }
-.album .count:after{
-   content: ' photos'
+
+
+.section{
+   margin: 35px 155px;
+}
+.section>.header{
+   font-size: larger;
+}
+
+.videos,.pictures{
+   width: 100%;
+   overflow: auto;
+}
+.video{
+   display: inline-block;
+   width: 200px;
+   margin-left: 150px;
+   margin-bottom: 20px;
+   float: left;
+   text-align: center;
+   overflow: visible;
 }
 
 .picture{
@@ -74,6 +93,9 @@ body{
    height: 135px;
    border: 3px solid white;
 }
+
+
+
 
 .back.link{
    width: 80px;
