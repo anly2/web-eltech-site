@@ -129,6 +129,18 @@ body{
    margin: 0px 10px;
 }
 
+/* Because of the loose implementation of comments and tags, the bottom section of the posts is hidden */
+.article .bottom{
+   display: none;
+}
+.article .continue{
+   border-top: 1px dashed #294F73;
+   margin-top: 10px;
+   padding-top: 10px;
+
+}
+/* End of bottom section' concealment */
+
 /* For the lack of content, menus are disabled */
 .menus{
    display: none;

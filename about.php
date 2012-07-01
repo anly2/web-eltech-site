@@ -5,6 +5,13 @@ $page = 'about us'
 <html>
 <head>
 <?php wrapper_frame_head('   '); ?>
+
+   <style type="text/css">
+      .member .class:after{
+         content: ' клас';
+      }
+   </style>
+
 </head>
 <body>
 
@@ -13,97 +20,74 @@ $page = 'about us'
 
 <div class="contents">
    <div class="center header">
-      Клуб по приложна електроника и електротехника
+      Клуб приложна електроника и електротехника
       <br />
       <small>по <a href="#the-project">проект "Успех"</a>, <a href="http://www.mgberon.com">МГ "Д-р Петър Берон", Варна</a></small>
    </div>
 
    <div class="left column">
-      <a name="contacts"></a>
-      <button class="left">За Контакти</button>
+      <br /><br />
+
+      <a name="the-group"></a>
+      <a name="the-group1"></a>
+      <button class="left">Първа Група</button>
+      <a name="members"></a>
 
       <br /><br /><br />
 
-      <ul class="contacts">
-         <li class="contact">
-            <div class="name"><span class="title" title="инжинер">инж.</span> Костадин Костадинов</div>
-            <div class="duty">ръководител на групите по проекта</div>
-            <div class="means-of-communication">
-               <div class="email e-mail mail">
-                  <a href="mailto:dfs@abv.bg">dfs@abv.bg</a>
-               </div>
-            </div>
+      <ul class="members">
+         <li class="member">
+            <div class="name"> Неделчо Валентинов Ласков </div>
+            <div class="class"> IX Б </div>
          </li>
-         <li class="contact">
-            <div class="name">Петя Костадинова</div>
-            <div class="duty">ръководител на групите по проекта</div>
-            <div class="means-of-communication">
-               <div class="email e-mail mail">
-                  <a href="mailto:petya7@mail.bg">petya7@mail.bg</a>
-               </div>
-            </div>
+         <li class="member">
+            <div class="name"> Тони Александров Козарев </div>
+            <div class="class"> IX Б </div>
          </li>
-         <li class="contact">
-            <div class="name">Никола Узунов</div>
-            <div class="duty">Web Designer</div>
-            <div class="means-of-communication">
-               <div class="email e-mail mail">
-                  <a href="mailto:nickchou@abv.bg">nickchou@abv.bg</a>
-               </div>
-            </div>
+         <li class="member">
+            <div class="name"> Светослав Миленов Неделчев </div>
+            <div class="class"> IX Б </div>
          </li>
-         <li class="contact">
-            <div class="name">Анко Анчев</div>
-            <div class="duty">Web Developer</div>
-            <div class="means-of-communication">
-               <div class="email e-mail mail">
-                  <a href="mailto:ankos2@hotmail.com">ankos2@hotmail.com</a>
-               </div>
-            </div>
+         <li class="member">
+            <div class="name"> Боян Атанасов Папазчев </div>
+            <div class="class"> IX Г </div>
+         </li>
+         <li class="member">
+            <div class="name"> Васил Ясенов Сарафов </div>
+            <div class="class"> IX Г </div>
+         </li>
+         <li class="member">
+            <div class="name"> Даниел Мирославов Маринов </div>
+            <div class="class"> IX Г </div>
+         </li>
+         <li class="member">
+            <div class="name"> Димитър Мирославов  Мирчев </div>
+            <div class="class"> IX Г </div>
+         </li>
+         <li class="member">
+            <div class="name"> Димитър Христов  Стефанов </div>
+            <div class="class"> IX Г </div>
+         </li>
+         <li class="member">
+            <div class="name"> Михаил  Валентинов Михов </div>
+            <div class="class"> IX Г </div>
+         </li>
+         <li class="member">
+            <div class="name"> Анна Ашотовна Торосян </div>
+            <div class="class"> IX З </div>
+         </li>
+         <li class="member">
+            <div class="name"> Вероника Юлианова Станкова </div>
+            <div class="class"> IX З </div>
          </li>
       </ul>
-
-      <br /><br /><br /><br />
-
-      <div>
-         <a name="the-project"></a>
-         <button class="left">За Проекта</button>
-
-         <br /><br /><br />
-
-         <div id="the-project">
-            <div class="header">
-               <a href="http://uspeh.mon.bg/?m=99">Проект УСПЕХ</a>
-
-               <small>Проект BG 051РО001 – 4.2.05</small>
-            </div>
-
-            <div class="moto">
-               <big>"Да направим училището привлекателно за младите хора"</big>
-               <br />Съфинансиран от ЕСФ по ОП "Развитие на човешките ресурси" 2007-2013г
-            </div>
-
-            <div class="image-container">
-               <img src="img/pr_success.png" />
-               <img src="img/eu.png" />
-               <img src="img/euf.png" />
-               <img src="img/monm.png" />
-            </div>
-
-            <p>
-               Извънкласната дейност по електротехника и електроника в МГ“Д-р П.Берон“ - Варна се осъществява с две групи ученици от 9 и 11 клас. Дейностите по проекта са организирани в лабораторията по физика на МГ и специализираните лаборатории на катедрите „Теоретична и измервателна електротехника“ и „ Микроелектроника“ на ТУ-гр.Варна. Те са насочени към осмисляне на знания по физика от раздел Електричество и прилагането им в електротехниката и електрониката, които са базови области за съвременните технологии.
-               Основната цел на занятията е изграждане и развиване на практически умения за работа с измервателни уреди, електронни схеми и устройства. Дейността развива интереси към науката и техниката, към инженерните специалности и съдейства за професионалното ориентиране на учениците.
-            </p>
-
-            <br /><a href="http://uspeh.mon.bg/?m=99">сайт на МОMН към проект УСПЕХ</a><br />
-         </div>
-
-      </div>
    </div>
 
    <div class="right column">
+      <br /><br />
+
       <a name="the-group"></a>
-      <button class="right">За Групата</button>
+      <button class="right">Втора Група</button>
       <a name="members"></a>
 
       <br /><br /><br />
@@ -150,7 +134,7 @@ $page = 'about us'
             <div class="class">XI Г</div>
          </li>
          <li class="member">
-            <div class="name">Иван–Страцимир Тодоров Божков</div>
+            <div class="name">Иван-Страцимир Божков</div>
             <div class="class">XI Г</div>
          </li>
          <li class="member">
@@ -168,6 +152,52 @@ $page = 'about us'
          <li class="member">
             <div class="name">Петър Младенов Станев</div>
             <div class="class">XI Ж</div>
+         </li>
+      </ul>
+   </div>
+
+   <div class="center column">
+      <a name="contacts"></a>
+      <button class="left">За Контакти</button>
+
+      <br /><br /><br />
+
+      <ul class="contacts">
+         <li class="contact">
+            <div class="name"><span class="title" title="инженер">инж.</span> Костадин Костадинов</div>
+            <div class="duty">ръководител на групите по проекта</div>
+            <div class="means-of-communication">
+               <div class="email e-mail mail">
+                  <a href="mailto:dfs@abv.bg">dfs@abv.bg</a>
+               </div>
+            </div>
+         </li>
+         <li class="contact">
+            <div class="name">Петя Костадинова</div>
+            <div class="duty">ръководител на групите по проекта</div>
+            <div class="means-of-communication">
+               <div class="email e-mail mail">
+                  <a href="mailto:petya7@mail.bg">petya7@mail.bg</a>
+               </div>
+            </div>
+         </li>
+         <li class="contact">
+            <div class="name">Никола Узунов</div>
+            <div class="duty">Web Designer</div>
+            <div class="means-of-communication">
+               <div class="email e-mail mail">
+                  <a href="mailto:nickchou@abv.bg">nickchou@abv.bg</a>
+               </div>
+            </div>
+         </li>
+         <li class="contact">
+            <div class="name">Анко Анчев</div>
+            <div class="duty">Web Developer</div>
+            <div class="means-of-communication">
+               <div class="email e-mail mail">
+                  <a href="mailto:ankos2@hotmail.com">ankos2@hotmail.com</a>
+               </div>
+            </div>
          </li>
       </ul>
    </div>

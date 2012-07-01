@@ -1,21 +1,57 @@
 <?php
 session_start();
-include "mysql";
+include "mysql.php";
 include_once "wrapper.frame.en.php";
 $page = 'blog';
 
-////Test Purposes
-$_SESSION['user'] = 'Andy';
-$_SESSION['admin'] = mysql_("SELECT UID FROM users WHERE Username='".$_SESSION['user']."' AND Rights>5",true)>0;
+$_SESSION['admin'] = isset($_SESSION['user'])? (mysql_("SELECT UID FROM users WHERE Username='".$_SESSION['user']."' AND Rights>5",true)>0) : false;
 
+if(isset($_SESSION['user']) && isset($_SESSION['admin']) && $_SESSION['admin']){
+   if(isset($_REQUEST['new'])){
+      $_REQUEST['content'] = str_replace(array("&lt;", "&gt;"), array("<", ">"), $_REQUEST['content']);
+
+      mysql_("INSERT INTO blog values(".
+         mysql_("SELECT MAX(BID)+1 FROM blog").", ".
+         "'".trim(addslashes($_REQUEST['title']))."', ".
+         "'".$_SESSION['user']."', ".
+         "'".trim(addslashes($_REQUEST['content']))."', ".
+         trim(addslashes($_REQUEST['category'])).", ".
+         '0'.", ".
+         "'', ".
+         "NOW()".
+      ")");
+
+      echo '<script type="text/javascript">window.location.href="?";</script>'."\n";
+      exit;
+   }
+   if(isset($_REQUEST['edit'])){
+      $_REQUEST['content'] = str_replace(array("&lt;", "&gt;"), array("<", ">"), $_REQUEST['content']);
+
+      mysql_("UPDATE blog SET ".
+         "Title = '".trim(addslashes($_REQUEST['title']))."', ".
+         "Author ='".$_SESSION['user']."', ".
+         "Contents = '".trim(addslashes($_REQUEST['content']))."', ".
+         "Category = ".trim(addslashes($_REQUEST['category'])).", ".
+         "Date = NOW()".
+      " WHERE BID = ".trim(addslashes($_REQUEST['BID'])) );
+
+      echo '<script type="text/javascript">window.location.href="?";</script>'."\n";
+      exit;
+   }
+   if(isset($_REQUEST['remove'])){
+      mysql_("DELETE FROM blog WHERE BID = ".trim(addslashes($_REQUEST['remove'])) );
+
+      echo '<script type="text/javascript">window.location.href="?";</script>'."\n";
+      exit;
+   }
+}
 
 $sql  = "SELECT ";
 $sql .= "a.BID as BID, a.Title as title, a.Author as author, b.Name as category, a.Date as date, a.Contents as contents, a.Comments as comments, a.Tags as tags ";
 $sql .= "FROM blog as a, blog_categories as b ";
 $sql .= "WHERE a.Category = b.Category ";
 $sql .= "ORDER BY date DESC";
-$articles = mysql_($sql, MYSQL_ASSOC);
-
+$articles = mysql_($sql, MYSQL_ASSOC|MYSQL_TABLE);
 
 head:{
    echo '<html>'."\n";
@@ -105,9 +141,9 @@ body:{
          echo $pad.'      <div class="date">'.date_format(date_create($article['date']), 'j F Y').'</div>'."\n";
          if($_SESSION['admin']){
             echo $pad.'      <span class="control">'."\n";
-            echo $pad.'         <a href="?new&inspiration='.$article['BID'].'">New</a>'."\n";
-            echo $pad.'         <a href="?edit='.$article['BID'].'">Edit</a>'."\n";
-            echo $pad.'         <a href="?delete='.$article['BID'].'">Delete</a>'."\n";
+            echo $pad.'         <a href="editor.en.php?inspiration='.$article['BID'].'">New</a>'."\n";
+            echo $pad.'         <a href="editor.en.php?edit='.$article['BID'].'">Edit</a>'."\n";
+            echo $pad.'         <a href="#remove" onclick="if(confirm(\'Are you sure you want to delete this post?\')) window.location.href=\'?remove='.$article['BID'].'\';">Delete</a>'."\n";
             echo $pad.'      </span>'."\n";
          }
          echo $pad.'   </div>'."\n";
@@ -123,7 +159,7 @@ body:{
          echo $pad.'   </div>'."\n";
          echo $pad.'   <div class="bottom">'."\n";
          echo $pad.'      <div class="comments" title="Comments">'."\n";
-         echo $pad.'         <a href="?article='.$article['BID'].'&comments">'.$article['comments'].' Comment'.($article['comments']>1? 's' : '').'</a>'."\n";
+         echo $pad.'         <a href="?article='.$article['BID'].'&comments">'.$article['comments'].' Comment'.($article['comments']!=1? 's' : '').'</a>'."\n";
          echo $pad.'      </div>'."\n";
          echo $pad.'      <div class="tags" title="Tags">'."\n";
          echo $pad.'         <span>'.join(explode(' ', $article['tags']), '</span> <span>').'</span>'."\n";

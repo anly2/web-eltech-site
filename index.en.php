@@ -37,6 +37,12 @@ $page = 'home';
 <?php wrapper_frame_header(); ?>
 
 <div class="contents">
+   <div class="header" style="text-align: center; margin-bottom: 30px; font-family: Romul; font-size: 1em;">
+      <a href="about.en.php#the-project"><img src="img/pr_success.png" style="height: 5em; margin: 0em 25em -5em -25em;" /></a>
+      <i style="line-height: 3em; display: block;">"To make school more attractive to the young"</i>
+      <small>Financed by ESF via operative program "Human Resource Development" 2007-2013</small>
+   </div>
+
    <div class="gallery section">
       <div class="window">
          <div class="image container">
@@ -70,38 +76,77 @@ unset($imgs);
 
          $('.arrow.left' ).on('click', prevTab);
          $('.arrow.right').on('click', nextTab);
+
+         gallery_window_hover = false;
+         $('.gallery .window').mouseover( function(){ gallery_window_hover = true;  } );
+         $('.gallery .window').mouseout(  function(){ gallery_window_hover = false; } );
+         iCycle = setInterval( function(){ if(!gallery_window_hover) nextTab()}, 7000);
       </script>
    </div>
 
+   <!--
    <div class="posts section">
       <div class="left">
-         <div class="header">Blog Posts</div>
+         <div class="header">Blog News</div>
          <div class="content">
-            <a href="?">Честит Великден!</a>
-            <a href="?">Материалите са поръчани</a>
-            <a href="?">Посещение в ТУ</a>
-            <a href="?">Отново в ТУ!</a>
+            <a href="gallery.php?album=31.03.2012">Посещение на ТУ – 31.03.2012г.</a>
+            <a href="gallery.php?album=08.04.2012">Посещение на ТУ – 8.04.2012г.</a>
          </div>
       </div>
       <div class="right">
          <div class="header">Forum Posts</div>
          <div class="content">
             <a href="?">От къде да започна?</a>
-            <a href="?">Къде се бърка най-често?</a>
+            <a href="?">Къде се греши най-често?</a>
             <a href="?">Интересни неща които мога да си направя</a>
             <a href="?">Как да си направя: Радиопредавател и применик?</a>
          </div>
       </div>
    </div>
+   -->
 
    <div class="posts section">
+      <div class="left">
+         <div class="header">Projects in Physics</div>
+         <div class="content">
+            <a href="http://www.tvppr.hit.bg/INDEX_frame">Current in semiconductors</a>
+            <a href="http://free.hit.bg/condensers/">Capacitors</a>
+            <a href="http://www.magnitni-vzaimodejstviq.hit.bg/">Magnetic Interactions</a>
+         </div>
+      </div>
+      <div class="right">
+         <div class="header">Forum Posts</div>
+         <div class="content">
+            <a href="?">Where to start from?</a>
+            <a href="?">What is most commonly mistaken?</a>
+            <a href="?">Interesting ideas for devices</a>
+         </div>
+      </div>
       <div class="center">
+         <div class="header glow" style="margin-bottom: 0px;">Created by us</div>
+         <div class="content" style="min-height: 0px; margin-bottom: -10px;">
+            <a href="gallery.en.php?album=created_by_us">Photo Album</a>
+            <a href="gallery.en.php?album=izlojba">Exhibition</a>
+            <a href="presentation.en.php?p=2">Presentation</a>
+         </div>
+      </div>
+   </div>
+   <div class="posts section">
+      <div class="left">
+         <div class="header">Learn by yourself</div>
+         <div class="content">
+            <a href="presentation.en.php?p=0" target="_BLANK">V-A characteristics of semiconductor diode</a>
+            <a href="presentation.en.php?p=1" target="_BLANK">Logical operations „AND“, „OR“ и „NOT“</a>
+         </div>
+      </div>
+      <div class="right">
          <div class="header">Related Links</div>
          <div class="content">
-            <a class="link" href="http://www.tu-varna.bg">TU-Varna</a>
-            <a class="link" href="http://www.napravisam.bg/forum/viewforum.php?f=11">НаправиСам</a>
-            <a class="link" href="http://www.tpetrov.com/search.php?maincat=%D0%95%D0%9B%D0%95%D0%9A%D0%A2%D0%A0%D0%9E%D0%A2%D0%95%D0%A5%D0%9D%D0%98%D0%9A">TPetrov</a>
-            <a class="link" href="http://bg.wikipedia.org/wiki/%D0%95%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0">Wiki</a>
+            <!--<a class="link" href="http://bg.farnell.com/jsp/home/homepage.jsp?CMP=KNC-GBG-FBG-GEN-PFB&s_kwcid=TC|15388|farnell.||S|b|16339953766">Farnell Catalog</a>-->
+            <a class="link" href="http://www.alldatasheet.com/?gclid=CITR5dq8_a8CFUZd3wod2yYFTg">Alldatasheet Catalog</a>
+            <a class="link" href="http://vbox7.com/play:902f6bea">Make by yourself</a>
+            <a class="link" href="http://www.mgberon.com/html/indexEn.php">MG - Varna</a>
+            <a class="link" href="http://www.tu-varna.bg">TU - Varna</a>
          </div>
       </div>
    </div>

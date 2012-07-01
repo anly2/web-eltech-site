@@ -1,4 +1,5 @@
 ﻿<?php
+@session_start();
 function wrapper_frame_head($pad=''){
    global $page;
 
@@ -19,19 +20,27 @@ function wrapper_frame_head($pad=''){
 
 function wrapper_frame_header($pad=''){
    echo $pad.'<div class="header">'."\n";
-   echo $pad.'   <div class="title"><a href="index.php" class="simple">Електротехника</a></div>'."\n";
+   echo $pad.'   <a href="http://www.mgberon.com"><img id="emblem" src="img/mg_logo.png" /></a>'."\n";
+   echo $pad.'   <div class="title"><a href="index.php" class="simple">Клуб приложна електротехника и електроника</a></div>'."\n";
    echo "\n";
    echo $pad.'   <ul class="nav">'."\n";
    echo $pad.'      <li><a href="index.php">Начало</a></li>'."\n";
    echo $pad.'      <li><a href="about.php">За Нас</a></li>'."\n";
+   echo $pad.'      <li><a href="project.php">За Проекта</a></li>'."\n";
    echo $pad.'      <li><a href="gallery.php">Галерия</a></li>'."\n";
    echo $pad.'      <li><a href="?forum">Форум</a></li>'."\n";
    echo $pad.'      <li><a href="blog.php">Блог</a></li>'."\n";
    echo $pad.'   </ul>'."\n";
    echo "\n";
    echo $pad.'   <div class="languages">'."\n";
-   echo $pad.'      <a href="'.str_replace(".php", ".en.php", str_replace(".en", "", basename($_SERVER['SCRIPT_FILENAME']))).'"><img src="img/flag_en.gif" /></a>'."\n";
-   echo $pad.'      <a href="'.str_replace(".en", "", basename($_SERVER['SCRIPT_FILENAME'])).'" class="active"><img src="img/flag_bg.gif" /></a>'."\n";
+   $url_en = (stripos(" ".$_SERVER['REQUEST_URI'], ".php"))? ( str_replace(".php", ".en.php", str_replace(".en", "", substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], "/")+1))) )  :   ( (strpos(" ".$_SERVER['REQUEST_URI'], "?"))? str_replace("?", "index.en.php?", $_SERVER['REQUEST_URI']) : "index.en.php" );
+   $url_bg = (stripos(" ".$_SERVER['REQUEST_URI'], ".php"))? ( str_replace(".en", "", substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], "/")+1)) )   :   ( (strpos(" ".$_SERVER['REQUEST_URI'], "?"))? str_replace("?", "index.php?", $_SERVER['REQUEST_URI']) : "index.php" );
+   echo $pad.'      <a href="'.$url_en.'"><img src="img/flag_en.gif" /></a>'."\n";
+   echo $pad.'      <a href="'.$url_bg.'" class="active"><img src="img/flag_bg.gif" /></a>'."\n";
+   if(!isset($_SESSION['user']))
+      echo $pad.'      <a href="login.php"><img src="img/login.gif" title="Login"/></a>'."\n";
+   else
+      echo $pad.'      <a href="login.php?logout"><img src="img/login.gif" title="Logout"/></a>'."\n";
    echo $pad.'   </div>'."\n";
    echo $pad.'</div>'."\n";
 }
@@ -40,6 +49,7 @@ function wrapper_frame_footer($pad=''){
    echo $pad.'   <ul class="nav">'."\n";
    echo $pad.'      <li><a href="index.php">Начало</a></li>'."\n";
    echo $pad.'      <li><a href="about.php">За Нас</a></li>'."\n";
+   echo $pad.'      <li><a href="project.php">За Проекта</a></li>'."\n";
    echo $pad.'      <li><a href="gallery.php">Галерия</a></li>'."\n";
    echo $pad.'      <li><a href="?forum">Форум</a></li>'."\n";
    echo $pad.'      <li><a href="blog.php">Блог</a></li>'."\n";

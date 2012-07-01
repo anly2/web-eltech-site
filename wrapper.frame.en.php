@@ -1,4 +1,5 @@
 ﻿<?php
+@session_start();
 function wrapper_frame_head($pad=''){
    global $page;
 
@@ -20,21 +21,28 @@ function wrapper_frame_head($pad=''){
 
 function wrapper_frame_header($pad=''){
    echo $pad.'<div class="header">'."\n";
-   echo $pad.'   <div class="title">Eltech</div>'."\n";
+   echo $pad.'   <a href="http://www.mgberon.com/html/indexEn.php"><img id="emblem" src="img/mg_logo.png" /></a>'."\n";
+   echo $pad.'   <div class="title"><a href="index.en.php" class="simple">Applicable Electrics and Electronics club</a></div>'."\n";
    echo "\n";
    echo $pad.'   <ul class="nav">'."\n";
    echo $pad.'      <li><a href="index.en.php">Home</a></li>'."\n";
    echo $pad.'      <li><a href="about.en.php">About us</a></li>'."\n";
+   echo $pad.'      <li><a href="project.en.php">The Project</a></li>'."\n";
    echo $pad.'      <li><a href="gallery.en.php">Gallery</a></li>'."\n";
    echo $pad.'      <li><a href="?forum">Forum</a></li>'."\n";
    echo $pad.'      <li><a href="blog.en.php">Blog</a></li>'."\n";
    echo $pad.'   </ul>'."\n";
    echo "\n";
    echo $pad.'   <div class="languages">'."\n";
-   echo $pad.'      <a href="'.str_replace(".php", ".en.php", str_replace(".en", "", basename($_SERVER['SCRIPT_FILENAME']))).'" class="active"><img src="img/flag_en.gif" /></a>'."\n";
-   echo $pad.'      <a href="'.str_replace(".en", "", basename($_SERVER['SCRIPT_FILENAME'])).'"><img src="img/flag_bg.gif" /></a>'."\n";
+   $url_en = (stripos(" ".$_SERVER['REQUEST_URI'], ".php"))? ( str_replace(".php", ".en.php", str_replace(".en", "", substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], "/")+1))) )  :   ( join("index.en.php", explode("?", $_SERVER['REQUEST_URI'])) );
+   $url_bg = (stripos(" ".$_SERVER['REQUEST_URI'], ".php"))? ( str_replace(".en", "", substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], "/")+1)) )   :   ( join("index.php", explode("?", $_SERVER['REQUEST_URI'])) );
+   echo $pad.'      <a href="'.$url_en.'" class="active"><img src="img/flag_en.gif" /></a>'."\n";
+   echo $pad.'      <a href="'.$url_bg.'"><img src="img/flag_bg.gif" /></a>'."\n";
+   if(!isset($_SESSION['user']))
+      echo $pad.'      <a href="login.en.php"><img src="img/login.gif" title="Login"/></a>'."\n";
+   else
+      echo $pad.'      <a href="login.en.php?logout"><img src="img/login.gif" title="Logout"/></a>'."\n";
    echo $pad.'   </div>'."\n";
-   echo $pad.'</div>'."\n";
    echo $pad.'</div>'."\n";
 }
 function wrapper_frame_footer($pad=''){
@@ -42,6 +50,7 @@ function wrapper_frame_footer($pad=''){
    echo $pad.'   <ul class="nav">'."\n";
    echo $pad.'      <li><a href="index.en.php">Home</a></li>'."\n";
    echo $pad.'      <li><a href="about.en.php">About us</a></li>'."\n";
+   echo $pad.'      <li><a href="project.en.php">The Project</a></li>'."\n";
    echo $pad.'      <li><a href="gallery.en.php">Gallery</a></li>'."\n";
    echo $pad.'      <li><a href="?forum">Forum</a></li>'."\n";
    echo $pad.'      <li><a href="blog.en.php">Blog</a></li>'."\n";

@@ -5,6 +5,13 @@ $page = 'about us'
 <html>
 <head>
 <?php wrapper_frame_head('   '); ?>
+
+   <style type="text/css">
+      .member .class:after{
+         content: ' class';
+      }
+   </style>
+
 </head>
 <body>
 
@@ -13,12 +20,143 @@ $page = 'about us'
 
 <div class="contents">
    <div class="center header">
-      Клуб по приложна електроника и електротехника
+      Applicable Electrics and Electronics club
       <br />
-      <small>по <a href="#the-project">проект "Успех"</a>, <a href="http://www.mgberon.com">МГ "Д-р Петър Берон", Варна</a></small>
+      <small>by <a href="#the-project">project "Success"</a>, <a href="http://www.mgberon.com">MG "Dr. Peter Beron", Varna</a></small>
    </div>
 
    <div class="left column">
+      <br /><br />
+
+      <a name="the-group"></a>
+      <a name="the-group1"></a>
+      <button class="left">First Group</button>
+      <a name="members"></a>
+
+      <br /><br /><br />
+
+      <ul class="members">
+         <li class="member">
+            <div class="name"> Nedelcho Valentinov Laskov </div>
+            <div class="class"> IX B </div>
+         </li>
+         <li class="member">
+            <div class="name"> Toni Alexandrov Kozarev </div>
+            <div class="class"> IX B </div>
+         </li>
+         <li class="member">
+            <div class="name"> Svetoslav Milenov Nedelchev </div>
+            <div class="class"> IX B </div>
+         </li>
+         <li class="member">
+            <div class="name"> Boyan Atanasov Papazchev </div>
+            <div class="class"> IX G </div>
+         </li>
+         <li class="member">
+            <div class="name"> Vasil Yassenov Sarafov </div>
+            <div class="class"> IX G </div>
+         </li>
+         <li class="member">
+            <div class="name"> Daniel Miroslavov Marinov </div>
+            <div class="class"> IX G </div>
+         </li>
+         <li class="member">
+            <div class="name"> Dimitar Miroslavov Mirchev </div>
+            <div class="class"> IX G </div>
+         </li>
+         <li class="member">
+            <div class="name"> Dimitar Hristov Stefanov </div>
+            <div class="class"> IX G </div>
+         </li>
+         <li class="member">
+            <div class="name"> Mihail Valentinov Mihov </div>
+            <div class="class"> IX G </div>
+         </li>
+         <li class="member">
+            <div class="name"> Anna Ashotovna Torossian </div>
+            <div class="class"> IX Z </div>
+         </li>
+         <li class="member">
+            <div class="name"> Veronika Yulianova Stankova </div>
+            <div class="class"> IX Z </div>
+         </li>
+      </ul>
+   </div>
+
+   <div class="right column">
+      <br /><br />
+
+      <a name="the-group"></a>
+      <button class="right">Second Group</button>
+      <a name="members"></a>
+
+      <br /><br /><br />
+
+      <ul class="members">
+         <li class="member">
+            <div class="name"> Mihail Atanasov Enimanev </div>
+            <div class="class"> XI A </div>
+         </li>
+         <li class="member">
+            <div class="name"> Krassimir Georgiev Trenchev </div>
+            <div class="class"> XI A </div>
+         </li>
+         <li class="member">
+            <div class="name"> Stefan Nikolov Todorov </div>
+            <div class="class"> XI D </div>
+         </li>
+         <li class="member">
+            <div class="name"> Kristian Andreev Shtarkov </div>
+            <div class="class"> XI D </div>
+         </li>
+         <li class="member">
+            <div class="name"> Ivelin Deyanov Petkov </div>
+            <div class="class"> XI D </div>
+         </li>
+         <li class="member">
+            <div class="name"> Ivelin Krasimirov Denev </div>
+            <div class="class"> XI D </div>
+         </li>
+         <li class="member">
+            <div class="name"> Georgi Dimitrov Georgiev </div>
+            <div class="class"> XI D </div>
+         </li>
+         <li class="member">
+            <div class="name"> Nikolay Anastasov Nikolaev </div>
+            <div class="class"> XI D </div>
+         </li>
+         <li class="member">
+            <div class="name"> Simeon Milenov Hristov </div>
+            <div class="class"> XI D </div>
+         </li>
+         <li class="member">
+            <div class="name"> Antoan Rumenov Angelov </div>
+            <div class="class"> XI D </div>
+         </li>
+         <li class="member">
+            <div class="name"> Ivan-Stracimir Todorov Bozhkov </div>
+            <div class="class"> XI D </div>
+         </li>
+         <li class="member">
+            <div class="name"> Nikolay Nikolaev Hubenov </div>
+            <div class="class"> XI D </div>
+         </li>
+         <li class="member">
+            <div class="name"> Anko Stoimenov Anchev </div>
+            <div class="class"> XI E </div>
+         </li>
+         <li class="member">
+            <div class="name"> Georgi Stoyanov Stoyanov </div>
+            <div class="class"> XI E </div>
+         </li>
+         <li class="member">
+            <div class="name"> Petar Mladenov Stanev </div>
+            <div class="class"> XI G </div>
+         </li>
+      </ul>
+   </div>
+
+   <div class="center column">
       <a name="contacts"></a>
       <button class="left">Contacts</button>
 
@@ -26,8 +164,8 @@ $page = 'about us'
 
       <ul class="contacts">
          <li class="contact">
-            <div class="name"><span class="title" title="инжинер">инж.</span> Костадин Костадинов</div>
-            <div class="duty">ръководител на групите по проекта</div>
+            <div class="name"><span class="title" title="engineer">eng.</span> Kostadin Kostadinov</div>
+            <div class="duty">Head of the groups</div>
             <div class="means-of-communication">
                <div class="email e-mail mail">
                   <a href="mailto:dfs@abv.bg">dfs@abv.bg</a>
@@ -35,8 +173,8 @@ $page = 'about us'
             </div>
          </li>
          <li class="contact">
-            <div class="name">Петя Костадинова</div>
-            <div class="duty">ръководител на групите по проекта</div>
+            <div class="name">Petya Kostadinova</div>
+            <div class="duty">Head of the groups</div>
             <div class="means-of-communication">
                <div class="email e-mail mail">
                   <a href="mailto:petya7@mail.bg">petya7@mail.bg</a>
@@ -44,7 +182,7 @@ $page = 'about us'
             </div>
          </li>
          <li class="contact">
-            <div class="name">Никола Узунов</div>
+            <div class="name">Nikola Uzunov</div>
             <div class="duty">Web Designer</div>
             <div class="means-of-communication">
                <div class="email e-mail mail">
@@ -53,121 +191,13 @@ $page = 'about us'
             </div>
          </li>
          <li class="contact">
-            <div class="name">Анко Анчев</div>
+            <div class="name">Anko Anchev</div>
             <div class="duty">Web Developer</div>
             <div class="means-of-communication">
                <div class="email e-mail mail">
                   <a href="mailto:ankos2@hotmail.com">ankos2@hotmail.com</a>
                </div>
             </div>
-         </li>
-      </ul>
-
-      <br /><br /><br /><br />
-
-      <div>
-         <a name="the-project"></a>
-         <button class="left">The Project</button>
-
-         <br /><br /><br />
-
-         <div id="the-project">
-            <div class="header">
-               <a href="http://uspeh.mon.bg/?m=99">Проект УСПЕХ</a>
-
-               <small>Проект BG 051РО001 – 4.2.05</small>
-            </div>
-
-            <div class="moto">
-               <big>"Да направим училището привлекателно за младите хора"</big>
-               <br />Съфинансиран от ЕСФ по ОП "Развитие на човешките ресурси" 2007-2013г
-            </div>
-
-            <div class="image-container">
-               <img src="img/pr_success.png" />
-               <img src="img/eu.png" />
-               <img src="img/euf.png" />
-               <img src="img/monm.png" />
-            </div>
-
-            <p>
-               Извънкласната дейност по електротехника и електроника в МГ“Д-р П.Берон“ - Варна се осъществява с две групи ученици от 9 и 11 клас. Дейностите по проекта са организирани в лабораторията по физика на МГ и специализираните лаборатории на катедрите „Теоретична и измервателна електротехника“ и „ Микроелектроника“ на ТУ-гр.Варна. Те са насочени към осмисляне на знания по физика от раздел Електричество и прилагането им в електротехниката и електрониката, които са базови области за съвременните технологии.
-               Основната цел на занятията е изграждане и развиване на практически умения за работа с измервателни уреди, електронни схеми и устройства. Дейността развива интереси към науката и техниката, към инженерните специалности и съдейства за професионалното ориентиране на учениците.
-            </p>
-
-            <br /><a href="http://uspeh.mon.bg/?m=99">сайт на МОMН към проект УСПЕХ</a><br />
-         </div>
-
-      </div>
-   </div>
-
-   <div class="right column">
-      <a name="the-group"></a>
-      <button class="right">The Group</button>
-      <a name="members"></a>
-
-      <br /><br /><br />
-
-      <ul class="members">
-         <li class="member">
-            <div class="name">Михаил Атанасов Ениманев</div>
-            <div class="class">XI А</div>
-         </li>
-         <li class="member">
-            <div class="name">Красимир Георгиев Тренчев</div>
-            <div class="class">XI А</div>
-         </li>
-         <li class="member">
-            <div class="name">Стефан Николов Тодоров</div>
-            <div class="class">XI Г</div>
-         </li>
-         <li class="member">
-            <div class="name">Кристиян Андреев Щърков</div>
-            <div class="class">XI Г</div>
-         </li>
-         <li class="member">
-            <div class="name">Ивелин Деянов Петков</div>
-            <div class="class">XI Г</div>
-         </li>
-         <li class="member">
-            <div class="name">Ивелин Красимиров Денев</div>
-            <div class="class">XI Г</div>
-         </li>
-         <li class="member">
-            <div class="name">Георги Димитров Георгиев</div>
-            <div class="class">XI Г</div>
-         </li>
-         <li class="member">
-            <div class="name">Николай Николаев Анастасов</div>
-            <div class="class">XI Г</div>
-         </li>
-         <li class="member">
-            <div class="name">Симеон Миленов Христов</div>
-            <div class="class">XI Г</div>
-         </li>
-         <li class="member">
-            <div class="name">Антоан Руменов Ангелов</div>
-            <div class="class">XI Г</div>
-         </li>
-         <li class="member">
-            <div class="name">Иван–Страцимир Тодоров Божков</div>
-            <div class="class">XI Г</div>
-         </li>
-         <li class="member">
-            <div class="name">Николай Хубенов Николаев</div>
-            <div class="class">XI Г</div>
-         </li>
-         <li class="member">
-            <div class="name">Анко Стоименов Анчев</div>
-            <div class="class">XI Д</div>
-         </li>
-         <li class="member">
-            <div class="name">Георги Стоянов Стоянов</div>
-            <div class="class">XI Д</div>
-         </li>
-         <li class="member">
-            <div class="name">Петър Младенов Станев</div>
-            <div class="class">XI Ж</div>
          </li>
       </ul>
    </div>
