@@ -33,7 +33,7 @@ if(isset($_REQUEST['direct']))
    transition:width <?php echo $duration/1000; ?>s;
    -moz-transition:width <?php echo $duration/1000; ?>s; /* Firefox 4 */
    -webkit-transition:width <?php echo $duration/1000; ?>s; /* Safari and Chrome */
-   -o-transition:width <?php echo $duration/1000; ?>s;"
+   -o-transition:width <?php echo $duration/1000; ?>s;
 }
 </style>
 
