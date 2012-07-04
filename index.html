@@ -1,0 +1,258 @@
+﻿<html>
+<head>
+   <title>Electrotech</title>
+   <link rel="stylesheet" href="master.css" />
+   <link rel="stylesheet" href="blog.css" />
+   <style type="text/css">
+   /* Override Blog Specifics */
+   body{
+      padding-left: 0px;
+      padding-right: 0px;
+   }
+   </style>
+
+   <script type="text/javascript" src="../../jquery/jquery.js"></script>
+   <script type="text/javascript" src="../../jquery/jquery-css-transform.js"></script>
+   <script type="text/javascript" src="../../jquery/jquery-animate-css-rotate-scale.js"></script>
+   <script type="text/javascript">
+   function findPos(obj){
+      var curleft = curtop = 0;
+
+      if(obj.offsetParent)
+         do{
+            curleft += obj.offsetLeft;
+            curtop += obj.offsetTop;
+         }while(obj = obj.offsetParent);
+
+      return [curleft,curtop];
+   }
+   function findSize(obj){
+      var measures = new Array();
+
+      var ovrflw_x = obj.style.overflowX;
+      var ovrflw_y = obj.style.overflowY;
+
+      obj.style.overflowX = 'scroll';
+      obj.style.overflowY = 'scroll';
+
+      measures[0] = obj.scrollWidth;
+      measures[1] = obj.scrollHeight;
+
+      obj.style.overflowX = ovrflw_x;
+      obj.style.overflowY = ovrflw_y;
+
+      return measures;
+   }
+   function inter(c0, c1){
+      var x0 = c0.center[0];
+      var y0 = c0.center[1];
+      var r0 = c0.radius;
+      var x1 = c1.center[0];
+      var y1 = c1.center[1];
+      var r1 = c1.radius;
+
+      var dx = x1 - x0;
+      var dy = y1 - y0;
+
+      var d = Math.sqrt((dy*dy) + (dx*dx));
+
+      if(d > (r0 + r1))
+          return 0;
+      if(d < Math.abs(r0 - r1))
+          return -1;
+
+      var a = ((r0*r0) - (r1*r1) + (d*d)) / (2*d);
+
+      var x2 = x0 + (dx * a/d);
+      var y2 = y0 + (dy * a/d);
+
+      var h = Math.sqrt((r0*r0) - (a*a));
+
+      var rx = (-dy) * (h/d);
+      var ry =   dx  * (h/d);
+
+      var xi1 = x2 + rx;
+      var yi1 = y2 + ry;
+      var xi2 = x2 - rx;
+      var yi2 = y2 - ry;
+
+
+      if( (xi1 == xi2) && (yi1 == yi2) )
+         return [xi1, yi1];
+
+      return [[xi1, yi1], [xi2, yi2]];
+   }
+   </script>
+</head>
+<body>
+
+<div>
+
+   <div class="area">
+      <div class="fan">
+         <div class="header">Information</div>
+      </div>
+   </div>
+   <div class="area">
+      <div class="fan">
+         <div class="header">Lessons</div>
+      </div>
+   </div>
+   <div class="area">
+      <div class="fan">
+         <div class="header">Activity</div>
+      </div>
+   </div>
+   <div class="area">
+      <div class="fan">
+         <div class="header">Forum</div>
+      </div>
+   </div>
+   <div class="area">
+      <div class="fan">
+         <div class="header">Blog</div>
+         <div class="wings">
+            <a href="?">Честит Великден!</a>
+            <a href="?">Материалите са поръчани</a>
+            <a href="?">Посещение в ТУ</a>
+            <a href="?">Отново в ТУ!</a>
+            <a href="?" style="width: 0px; text-overflow: ellipsis;">Инструментите пристигнаха</a>
+         </div>
+      </div>
+   </div>
+   <div class="area">
+      <div class="fan">
+         <div class="header">Links</div>
+         <div class="wings">
+            <a class="link" href="http://www.tu-varna.bg">TU-Varna<br />http://www.tu-varna.bg</a>
+            <div class="dummy"></div>
+            <a class="link" href="http://www.napravisam.bg/forum/viewforum.php?f=11">НаправиСам<br />http://www.napravisam.bg/</a>
+            <a class="link" href="http://www.tpetrov.com/search.php?maincat=%D0%95%D0%9B%D0%95%D0%9A%D0%A2%D0%A0%D0%9E%D0%A2%D0%95%D0%A5%D0%9D%D0%98%D0%9A">TPetrov<br />http://www.tpetrov.com/search.php?maincat=ЕЛЕКТРОТЕХНИКА</a>
+            <div class="dummy"></div>
+            <a class="link" href="http://bg.wikipedia.org/wiki/%D0%95%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0">Wiki<br />http://bg.wikipedia.org/wiki/Електротехника</a>
+         </div>
+      </div>
+   </div>
+
+</div>
+
+<script type="text/javascript">
+   var fans = $('.wings');
+   var wingRotation = 6;
+
+   var i;
+   for(i=0; i<fans.length; i++){
+      var celeb = $(fans[i]).siblings('.header');
+      celeb.size = findSize(celeb[0]);
+      celeb.pos  = findPos( celeb[0]);
+
+      var acHeight = -20;
+      var m1 = 20;
+      var correction = 10;
+
+      var j, r=0;
+      for(j=0; j<fans[i].childNodes.length; j++){
+         if(fans[i].childNodes[j].nodeType == 3) continue;
+
+         r++;
+         if(r%3 == 1) acHeight = -20;
+
+         var elem = fans[i].childNodes[j];
+         elem.size = findSize(elem);
+
+         if(r<=3){
+            elem.style.textAlign = 'left';
+
+            elem.style.position = 'absolute';
+            elem.style.left = celeb.pos[0] - elem.size[0] -m1+correction;
+            elem.style.top  = celeb.pos[1] + acHeight;
+            acHeight += elem.size[1];
+
+            $(elem).rotate( ((2-r)*(6))+'deg' );
+         }
+         if(r>3){
+            elem.style.textAlign = 'right';
+
+            elem.style.position = 'absolute';
+            elem.style.left = celeb.pos[0] + celeb.size[0] +m1+correction;
+            elem.style.top  = celeb.pos[1] + acHeight;
+            acHeight += elem.size[1];
+
+            $(elem).rotate( ((5-r)*(-6))+'deg' );
+         }
+      }
+   }
+</script>
+
+<script type="text/javascriptA">
+   // Parameters
+   m1 = 20; //[px]  - The margin between the celebrity-element and the fan-element
+   m2 = 20; //[px]  - The margin between two fan-elements / feather-elements
+
+
+   fans = $('.fan');
+   var fI;
+   for(fI=0; fI<fans.length; fI++){
+      var celeb = fans[fI].previousSibling;
+      while(celeb.nodeType == 3){ celeb = celeb.previousSibling; }
+
+      var tmp = celeb.className.split(" ");
+      tmp.push("celebrity");
+      celeb.className = tmp.join(" ");
+      delete tmp;
+
+      celeb.pos  = findPos(celeb);
+      celeb.size = findSize(celeb);
+      var O = [ (celeb.pos[0] + celeb.size[0]/2) , (celeb.pos[1] + celeb.size[1]/2) ];
+
+      var fan_r = Math.max(celeb.size[0], celeb.size[1]) + m1;
+      var i;
+
+      var wings = new Array();
+      for(i=0; i < fans[fI].childNodes.length; i++)
+         if(fans[fI].childNodes[i].nodeType != 3)
+            wings.push(fans[fI].childNodes[i]);
+
+      var r = 0; //Rotation index
+      var prev = new Array(); // Pos of the previous wing
+
+      for(i=0; i<wings.length; i++){
+         var wing = wings[i];
+         wing.size = findSize(wing);
+         wing.style.position = 'absolute';
+
+         if(r == 0){
+            // Starting element
+            wing.style.left = (celeb.pos[0] + celeb.size[0]/2) - wing.size[0]/2;
+            wing.style.top  = (celeb.pos[1] + celeb.size[1]/2) - fan_r;
+
+            wing.pos = [parseInt(wing.style.left), parseInt(wing.style.top)];
+            prev = [-1, -1]; //Ensures that right-down direction will be picked
+
+            r++;
+            continue;
+         }
+
+         // Understand where we are
+         var rightward = (prev[1] <= celeb.pos[1]);
+         var downward  = (prev[0] >= celeb.pos[0]);
+
+         // Get margin point
+         var D = new Array(); //the point
+         D[0] =  wings[i-1].pos[0] + (rightward? wings[i-1].size[0] : -wings[i-1].size[0]);
+         D[1] =  wings[i-1].pos[1] + (downward?  wings[i-1].size[1] : -wings[i-1].size[1]);
+
+         //Get the Tmp point
+         var T = new Array(); //the point
+         T[0] = D[0] + (rightward? wing.size[0]/2 : -wing.size[0]/2);
+         T[1] = D[1] + (downward? -wing.size[1]/2 :  wing.size[1]/2);
+
+         var int1 = inter({center: T, radius: m2}, {center: O, radius: fan_r});
+         alert(int1);
+      }
+   }
+</script>
+
+
+</body>
+</html>
