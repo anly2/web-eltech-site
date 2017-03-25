@@ -1,0 +1,22 @@
+﻿#notice{
+   margin: 20% 20% 0px;
+   font-size: 1.3em;
+   color: #12202D;
+   text-align: center;
+}
+#notice .centered{
+   width: 5em;
+   margin: 0px auto;
+   padding: 5px 1em;
+}
+#notice a{
+   color: #620E10;
+}
+#notice .container{
+   width: 0px;
+   overflow: visible;
+   border-bottom: 2px solid #620E10;
+}
+#notice .container.spread{
+   width: 100%;
+}

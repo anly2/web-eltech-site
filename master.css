@@ -1,133 +1,200 @@
-body>div{
-   width: 90%;
-   margin: 0px auto;
+@font-face{
+   font-family: Romul;
+   src: url('romul.ttf')
+       ,url('romul.eot'); /* IE9 */
 }
 
-div.area{
-   width: 30%;
-   height: 25%;
-   text-align: center;
-   display: inline-block;
-}
-div.area>header{
-   position: relative;
-   top: 50%;
-}
-div.area:nth-of-type(odd){
-   margin-left: 30%;
-}
-div.area:nth-of-type(even){
-   margin-left: 5%;
-}
-div.area:first-of-type,
-div.area:last-of-type{
-   margin: 0px auto;
-   display: block;
-}
-
-header{
-   font-size: 20px;
-   font-weight: bold;
-}
-
-
-
-a{
-   color: #4D6185;
-   text-decoration: none;
-}
-a:hover{
-   color: #8DA1C5;
-   text-decoration: underline;
-}
-
-.link{
-   display: inline-block;
-   text-align: center;
-   width: 200px;
-   overflow: hidden;
-   white-space: nowrap;
-   text-overflow: ellipsis;
-
-   font-size: 14px;
-   font-style: italic;
-}
-.link:first-line{
+body{
+   padding: 0px;
+   margin: 0px;
+   font-family: Minion Pro;
    font-size: 16px;
-   font-weight: bold;
+}
+body>.header, body>.footer{
+   font-family: Trajan Pro;
+   font-family: Romul;
+   font-size: 10px;
 }
 
-.picture{
+body>.header{
    display: block;
-   width: 100px;
-   height: 100px;
-   border: 5px solid white;
-   background-color: white;
-   background-repeat: no-repeat;
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   z-index: 1;
+   width: 100%;
 }
-
-
-.area.TROUBLESHOOTING{
-   border: 1px solid gray;
+body{
+   padding-top: 60px;
 }
-
-
-
-.wing{
-   text-align: right;
-   position: relative;
-   top: -35px;
-   left: -100px;
-   width: 50%;
-   margin: 0px auto;
+body>.header{
+   background-color: #294f73;
+   padding: 0px 50px;
+   box-shadow: 0px 0px 20px black;
+   overflow: hidden;
+   text-align: left;
 }
-
-.wing.troubleshoot{
-   background-image: url('dot.jpg');
-   background-position: center center;
-   background-repeat: no-repeat;
-   background-size: 10px;
+body>.header #emblem{
+   height: 50px;
+   float: left;
+   margin-left: -50px;
+   margin-right: 10px;
 }
-.wing .feather{
+body>.header .title{
    display: inline-block;
+   font-weight: bold;
+   /*
+   font-size: 1.75em;
+   padding-top: 0.7em;
+   margin-bottom: -0.5em;
+   font-family: Verdana;
+   text-transform: uppercase;
+   */font-size: 1.7em; padding-top: 0.8em; margin-bottom: -0.5em;
+   letter-spacing: 3px;
+   color: #e3e3e3;
+}
+body>.header .title{
+   background: -moz-radial-gradient(center top, ellipse cover,  rgba(75, 137, 196, 1) 0%, rgba(41, 79, 115, 0) 100%); /* FF3.6+ */
+   background: -webkit-gradient(radial, center top, 0px, center top, 100%, color-stop(0%,rgba(75, 137, 196, 1)), color-stop(100%,rgba(41, 79, 115, 0))); /* Chrome,Safari4+ */
+   background: -webkit-radial-gradient(center top, ellipse cover,  rgba(75, 137, 196, 1) 0%,rgba(41, 79, 115, 0) 100%); /* Chrome10+,Safari5.1+ */
+   background: -o-radial-gradient(center top, ellipse cover,  rgba(75, 137, 196, 1) 0%,rgba(41, 79, 115, 0) 100%); /* Opera 12+ */
+   background: -ms-radial-gradient(center top, ellipse cover,  rgba(75, 137, 196, 1) 0%,rgba(41, 79, 115, 0) 100%); /* IE10+ */
+   background: radial-gradient(center top, ellipse cover,  rgba(75, 137, 196, 1) 0%,rgba(41, 79, 115, 0) 100%); /* W3C */
+}
+
+.nav{
+   display: inline-block;
+   padding: 0px;
+}
+body>.header .nav{
+   float: right;
+   margin-top: 1.5em;
+   margin-right: 140px;
+   white-space: nowrap;
+   overflow: visible;
+}
+.nav>li{
+   display: inline-block;
+   color: #e3e3e3;
+   margin: 0px 10px;
+   font-size: larger;
+}
+body>.header .nav>li{
+   font-size: 1.1em;
+}
+.nav>li:not(:last-of-type):after{
+   content: ' ';
+   display: inline-block;
+   width: 2px;
+   height: 17px;
+   background-image: url('img/rule.png');
+   background-repeat: repeat-x;
+   background-position: center center;
+   position: relative;
+   top: 4px;
+   left: 10px;
+}
+
+body>.header .nav:before,body>.header .nav:after{
+   content: url('img/nav_light.png');
+   display: block;
    width: 0px;
    height: 0px;
    overflow: visible;
-   white-space: nowrap;
+   margin-top: -105px;
 }
-.celebrity{
-   display: inline-block;
-   margin-left: auto;
-   margin-right: auto;
-   padding: 0px 30px 20px;
-
-   background-color: white;
-   background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
-   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
-   background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
-   background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Opera 12+ */
-   background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
-   background: radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
-   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-   z-index: 10;
+body>.header .nav:before{
+   float: left;
+   margin-left: -100px;
+}
+body>.header .nav:after{
+   float: right;
+   margin-left: -200px;
 }
 
-.wing .link{
-   color: black;
-   opacity: 0.5;
+.languages{
+   position: absolute;
+   top: 10px;
+   right: 120px;
 }
-.wing .link a{
-   color: black;
+.languages img{
+   width: 15px;
+   display: block;
+   margin-bottom: 5px;
 }
-.wing .link a:hover{
-   color: black;
+.languages a:not(.active):hover img{
+   border: 1px solid white;
+   margin-left: -1px;
+   margin-top: -2px;
+}
+.languages a.active img{
+   border: 1px solid #294F73;
+   margin-left: -1px;
+   cursor: auto;
+}
+
+a{
+   color: inherit;
    text-decoration: none;
 }
-.wing .link:hover{
-   color: #323232;
+a:not(.simple):hover{
    text-decoration: underline;
 }
-.wing .link:hover a{
-   color: #323232;
+a[name]{
+   margin-top: -30px;
+   margin-bottom: 30px;
+}
+
+.back.link{
+   position: fixed;
+   top: 130px;
+   left: 5px;
+}
+
+body{
+   background-color: #3f75a6;
+}
+
+.contents{
+   margin-top: 30px;
+}
+
+.header{
+   color: white;
+   font-weight: bold;
+}
+.contents>.header{
+   font-size: 1.375em;;
+}
+.moto{
+   color: white;
+   font-weight: bold;
+   font-family: Minion Pro;
+   text-align: center;
+}
+
+
+body>.footer{
+   margin-top: -2px;
+   min-height: 9.5em;
+   padding-bottom: 5px;
+   text-align: center;
+   background-color: #294F73;
+   background-size: 60% 100%;
+   background-image: url('img/footer_background.png');
+   background-repeat: no-repeat;
+   background-position: center top;
+}
+body>.footer.anchored{
+   /*//// Using JS, should increase content's size to fill all of the space it is intended to*/
+   display: block;
+   position: fixed;
+   bottom: 0px;
+   width: 100%;
+}
+body>.footer .nav{
+   margin-top: 30px;
+}
+body>.footer hr{
+   width: 40%;
 }

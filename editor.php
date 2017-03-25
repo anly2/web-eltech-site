@@ -1,43 +1,73 @@
-<!DOCTYPE html>
+﻿<?php
+include "mysql.php";
+include_once 'wrapper.frame.php';
+?>
 <html>
 <head>
-    <title>Editor</title>
-    <script type="text/javascript" src="../jquery/jquery.js"></script>
-    <script type="text/javascript" src="kendo.js"></script>
-    <link href="kendo.css" rel="stylesheet" />
+<?php wrapper_frame_head('   '); ?>
+
+    <script src="kendo/kendo.web.min.js"></script>
+    <script src="kendo/console.js"></script>
+    <link href="kendo/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.blueopal.min.css" rel="stylesheet" />
 </head>
 <body>
 
-        <div id="example" class="k-content">
-            <textarea id="editor" rows="10" cols="30" style="width:740px;height:440px">
-                    &lt;p&gt;&lt;img src=&quot;http://www.kendoui.com/Image/kendo-logo.png&quot; alt=&quot;Editor for ASP.NET MVC logo&quot; style=&quot;display:block;margin-left:auto;margin-right:auto;&quot; /&gt;&lt;/p&gt;
-                    &lt;p&gt;
-                        Kendo UI Editor allows your users to edit HTML in a familiar, user-friendly way.&lt;br /&gt;
-                        In this version, the Editor provides the core HTML editing engine, which includes basic text formatting, hyperlinks, lists,
-                        and image handling. The widget &lt;strong&gt;outputs identical HTML&lt;/strong&gt; across all major browsers, follows
-                        accessibility standards and provides API for content manipulation.
-                    &lt;/p&gt;
-                    &lt;p&gt;Features include:&lt;/p&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;Text formatting &amp; alignment&lt;/li&gt;
-                        &lt;li&gt;Bulleted and numbered lists&lt;/li&gt;
-                        &lt;li&gt;Hyperlink and image dialogs&lt;/li&gt;
-                        &lt;li&gt;Cross-browser support&lt;/li&gt;
-                        &lt;li&gt;Identical HTML output across browsers&lt;/li&gt;
-                        &lt;li&gt;Gracefully degrades to a &lt;code&gt;textarea&lt;/code&gt; when JavaScript is turned off&lt;/li&gt;
-                    &lt;/ul&gt;
-                    &lt;p&gt;
-                        Read &lt;a href=&quot;http://www.kendoui.com/documentation/introduction.aspx&quot;&gt;more details&lt;/a&gt; or send us your
-                        &lt;a href=&quot;http://www.kendoui.com/forums.aspx&quot;&gt;feedback&lt;/a&gt;!
-                    &lt;/p&gt;
-                </textarea>
-            <script>
-                $(document).ready(function() {
-                    // create Editor from textarea HTML element with default set of tools
-                    $("#editor").kendoEditor();
-                });
-            </script>
-        </div>
+<?php wrapper_frame_header(); ?>
+
+<?php
+if(isset($_REQUEST['inspiration'])){
+   $category = mysql_("SELECT Category FROM blog WHERE BID=".trim(addslashes($_REQUEST['inspiration'])));
+}else
+if(isset($_REQUEST['edit'])){
+   $post = mysql_("SELECT * FROM blog WHERE BID=".trim(addslashes($_REQUEST['edit'])), MYSQL_ASSOC);
+
+   $title = $post['Title'];
+   $category = $post['Category'];
+   $contents = $post['Contents'];
+}
+?>
+
+<div class="contents" style="text-align: center;">
+   <form action="blog.php?<?php echo (isset($_REQUEST['edit'])? 'edit' : 'new'); ?>" method="POST">
+   <?php
+      if(isset($_REQUEST['edit'])) echo '      <input type="hidden" name="BID" value="'.$_REQUEST['edit'].'" />'."\n";
+   ?>
+      <table width="100%" style="min-width: 700px;">
+         <tr>
+            <td align="left">
+
+               <label>
+                  Заглавие<br />
+                  <input type="text" name="title" <?php if(isset($title)) echo 'value="'.$title.'" '; ?>/>
+               </label>
+
+            </td>
+            <td width="160" align="right">
+
+               <label style="margin-left: 20px;">
+                  Категория<br />
+                  <select name="category">
+                     <?php
+                     $categories = mysql_("SELECT Category, BG_Name FROM blog_categories", MYSQL_ASSOC);
+                     foreach($categories as $i=>$c)
+                        echo '            <option value="'.$c['Category'].'"'.((isset($category) && $category==$i)? ' selected' : '').'>'.$c['Name'].'</option>'."\n";
+                     ?>
+                  </select>
+               </label>
+
+            </td>
+         </tr>
+      </table>
+
+      <textarea id="editor"  name="content" rows="10" cols="30"><?php if(isset($contents)) echo $contents; ?></textarea>
+      <script type="text/javascript">$(document).ready(function(){ $("#editor").kendoEditor(); });</script>
+
+      <input type="submit" value="Submit" />
+   </form>
+</div>
+
+<?php wrapper_frame_footer();?>
 
 </body>
 </html>
